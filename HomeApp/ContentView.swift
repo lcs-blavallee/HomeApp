@@ -21,7 +21,6 @@ struct ContentView: View {
                             RoundedRectangle(cornerRadius: 25.0)
                                 .frame(height: 45)
                         }
-                        Spacer()
                     }
                     HStack {
                         Text("Favorites")
@@ -41,15 +40,19 @@ struct ContentView: View {
                         }
                     }
                     HStack {
-                        Text("Basement")
-                            .foregroundStyle(Color.black)
-                            .font(.system(size: 25))
-                        .bold()
+                        HStack {
+                            Text("Basement")
+                                .foregroundStyle(Color.black)
+                                .font(.system(size: 25))
+                            .bold()
+                        }
                         Spacer()
                     }
                     HStack {
                         VStack {
                             RoundedRectangle(cornerRadius: 25.0)
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .aspectRatio(1.14, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                         }
                         VStack {
                             RoundedRectangle(cornerRadius: 25.0)

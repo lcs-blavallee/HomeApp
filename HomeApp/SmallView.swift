@@ -8,11 +8,36 @@
 import SwiftUI
 
 struct SmallView: View {
+    let topBoldedText: String
+    let bottomText: String
+    let imageOnSide: String
+    let colorOfImage: Color
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        ZStack {
+            RoundedRectangle(cornerRadius: 25.0)
+                .frame(height: 45)
+            HStack {
+                ZStack {
+                    Image(systemName: imageOnSide)
+                        .foregroundColor(colorOfImage)
+                    .font(.system(size: 25))
+                }
+                VStack {
+                    HStack {
+                        Text(topBoldedText)
+                            .foregroundStyle(Color.white)
+                        .bold()
+                        .frame(alignment: .leading)
+                    }
+                    Text(bottomText)
+                        .foregroundStyle(Color.gray)
+                }
+                }
+            }
+        }
 }
 
 #Preview {
-    SmallView()
+    SmallView(topBoldedText: "Climate", bottomText: "16.0-20.5°", imageOnSide: "fan.fill", colorOfImage: .blue)
 }
