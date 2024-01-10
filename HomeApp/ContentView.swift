@@ -10,39 +10,39 @@ import SwiftUI
 struct ContentView: View {
     
     let lightBlue = Color(
-            hue: 204/360.0,
-            saturation: 0.525,
-            brightness: 0.604
+            hue: 200/360.0,
+            saturation: 0.63,
+            brightness: 0.83
         )
     
     let lightTurquoise = Color(
-            hue: 188/360.0,
-            saturation: 0.386,
-            brightness: 0.578
+            hue: 186/360.0,
+            saturation: 0.59,
+            brightness: 0.75
         )
     
     let lightYellow = Color(
-            hue: 47/360.0,
-            saturation: 0.468,
-            brightness: 0.514
+            hue: 46/360.0,
+            saturation: 0.73,
+            brightness: 0.76
         )
     
     let circleBlue = Color(
-            hue: 233/360.0,
-            saturation: 0.435,
-            brightness: 0.18
+            hue: 224/360.0,
+            saturation: 0.68,
+            brightness: 0.30
         )
     
     let rectangleBlue = Color(
-            hue: 240/360.0,
-            saturation: 0.407,
-            brightness: 0.212
+            hue: 232/360.0,
+            saturation: 0.65,
+            brightness: 0.34
         )
     
     let rectangleGray = Color(
-            hue: 230/360.0,
-            saturation: 0.20,
-            brightness: 0.755
+            hue: 229/360.0,
+            saturation: 0.13,
+            brightness: 0.81
         )
     
     var body: some View {

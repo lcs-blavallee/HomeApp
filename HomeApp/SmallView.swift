@@ -23,13 +23,11 @@ struct SmallView: View {
                         .foregroundColor(colorOfImage)
                     .font(.system(size: 25))
                 }
-                VStack {
-                    HStack {
+                VStack (alignment: .leading) {
                         Text(topBoldedText)
                             .foregroundStyle(Color.white)
                         .bold()
                         .frame(alignment: .leading)
-                    }
                     Text(bottomText)
                         .foregroundStyle(Color.gray)
                 }
