@@ -1,5 +1,5 @@
 //
-//  SmallView.swift
+//  LargeView.swift
 //  HomeApp
 //
 //  Created by Benjamin Lavallee on 2024-01-09.
@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct SmallView: View {
+struct LargeViewDark: View {
+    let topText: String
     let topBoldedText: String
     let bottomText: String
+    let circleBehindImageColor: Color
     let imageOnSide: String
     let colorOfImage: Color
     let backgroudColor: Color
@@ -18,24 +20,27 @@ struct SmallView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(backgroudColor)
-                .frame(height: 50)
+                .frame(height: 95)
             HStack {
                 ZStack {
+                    Image(systemName: "circle.fill")
+                        .foregroundColor(circleBehindImageColor)
+                    .font(.system(size: 50))
                     Image(systemName: imageOnSide)
                         .foregroundColor(colorOfImage)
                     .font(.system(size: 25))
-                    .scaledToFit()
                 }
                 VStack (alignment: .leading) {
+                    Text(topText)
+                        .foregroundStyle(Color.gray)
                         Text(topBoldedText)
                             .foregroundStyle(Color.white)
                         .bold()
                         .frame(alignment: .leading)
-                        .scaledToFit()
                     Text(bottomText)
                         .foregroundStyle(Color.gray)
-                        .scaledToFit()
                 }
+                Spacer()
                 }
             }
         }
@@ -43,5 +48,6 @@ struct SmallView: View {
 
 #Preview {
     
-    return SmallView(topBoldedText: "Climate", bottomText: "16.0-20.5°", imageOnSide: "fan.fill", colorOfImage: .lightBlue, backgroudColor: .smallBackground)
+    return LargeViewDark(topText:"Garage", topBoldedText: "Door", bottomText: "Closed", circleBehindImageColor: .circleDark, imageOnSide: "door.garage.closed", colorOfImage: .turquoise, backgroudColor: .largeBackground)
 }
+

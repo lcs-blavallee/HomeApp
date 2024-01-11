@@ -8,99 +8,119 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    let lightBlue = Color(
-            hue: 200/360.0,
-            saturation: 0.63,
-            brightness: 0.83
-        )
-    
-    let lightTurquoise = Color(
-            hue: 186/360.0,
-            saturation: 0.59,
-            brightness: 0.75
-        )
-    
-    let lightYellow = Color(
-            hue: 46/360.0,
-            saturation: 0.73,
-            brightness: 0.76
-        )
-    
-    let circleBlue = Color(
-            hue: 224/360.0,
-            saturation: 0.68,
-            brightness: 0.30
-        )
-    
-    let rectangleBlue = Color(
-            hue: 232/360.0,
-            saturation: 0.65,
-            brightness: 0.34
-        )
-    
-    let rectangleGray = Color(
-            hue: 229/360.0,
-            saturation: 0.13,
-            brightness: 0.81
-        )
-    
     var body: some View {
-        NavigationStack {
-            ZStack {
-                VStack {
+        ZStack {
+            NavigationStack {
+                ZStack {
                     VStack {
-                        HStack {
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .frame(height: 45)
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .frame(height: 45)
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .frame(height: 45)
-                        }
-                    }
-                    HStack {
-                        Text("Favorites")
-                            .foregroundStyle(Color.black)
-                            .font(.system(size: 25))
-                            .bold()
-                        Spacer()
-                    }
-                    VStack {
-                        HStack {
-                            RoundedRectangle(cornerRadius: 25.0)
-                            RoundedRectangle(cornerRadius: 25.0)
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                Spacer()
+                                SmallView(topBoldedText: "Climate", bottomText: "16.0-20.5°", imageOnSide: "fan.fill", colorOfImage: .lightBlue, backgroudColor: .smallBackground)
+                                    .scaledToFit()
+                                    .frame(width: 150)
+                                SmallView(topBoldedText: "Security", bottomText: "No Alerts", imageOnSide: "lock.fill", colorOfImage: .turquoise, backgroudColor: .smallBackground)
+                                    .scaledToFit()
+                                    .frame(width: 135)
+                                Spacer()
+                                SmallView(topBoldedText: "Speakers", bottomText: "None Play", imageOnSide: "tv.and.hifispeaker.fill", colorOfImage: .white, backgroudColor: .smallBackground)
+                                    .frame(width: 100)
+                                
+                            }
                         }
                         HStack {
-                            RoundedRectangle(cornerRadius: 25.0)
-                            RoundedRectangle(cornerRadius: 25.0)
-                        }
-                    }
-                    HStack {
-                        HStack {
-                            Text("Basement")
+                            Text("Favorites")
                                 .foregroundStyle(Color.black)
                                 .font(.system(size: 25))
-                            .bold()
-                        }
-                        Spacer()
-                    }
-                    HStack {
-                        VStack {
-                            RoundedRectangle(cornerRadius: 25.0)
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .aspectRatio(1.14, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                                .bold()
+                            Spacer()
                         }
                         VStack {
-                            RoundedRectangle(cornerRadius: 25.0)
-                            RoundedRectangle(cornerRadius: 25.0)
-                            RoundedRectangle(cornerRadius: 25.0)
+                            HStack {
+                                LargeViewDark(topText:"Garage", topBoldedText: "Door", bottomText: "Closed", circleBehindImageColor: .circleDark, imageOnSide: "door.garage.closed", colorOfImage: .turquoise, backgroudColor: .largeBackground)
+                                    .padding(2)
+                                    .scaledToFill()
+                                LargeViewLight(topText: "Hallway", topBoldedText: "Nest", sideBigText: "17.5°", bottomText: "Hest to 12.0°", backgroudColor: .backgroundLight)
+                                    .padding(2)
+                                    .scaledToFill()
+                            }
+                            HStack {
+                                LargeViewDark(topText:"Living Room", topBoldedText: "Front Door", bottomText: "Locked", circleBehindImageColor: .circleDark, imageOnSide: "lock.fill", colorOfImage: .turquoise, backgroudColor: .largeBackground)
+                                    .padding(2)
+                                LargeViewDark(topText:"Basement", topBoldedText: "Side Door", bottomText: "Locked", circleBehindImageColor: .circleDark, imageOnSide: "lock.fill", colorOfImage: .turquoise, backgroudColor: .largeBackground)
+                            }
                         }
+                        HStack {
+                            HStack {
+                                Text("Basement")
+                                    .foregroundStyle(Color.black)
+                                    .bold()
+                                    .font(.system(size: 25))
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 20))
+                                
+                            }
+                            Spacer()
+                        }
+                        HStack {
+                            VStack {
+                                MediumViewLight(topBoldedText: "Network", topBoldedTextColor: .black, bottomText: "On" ,circleBehindImageColor: .circleYellow, imageOnSide: "poweroutlet.type.b.fill", colorOfImage: .white, backgroudColor: .backgroundLight)
+                                RoundedRectangle(cornerRadius: 25.0)
+                                    .aspectRatio(0.95, contentMode: .fill)
+                            }
+                            VStack {
+                                MediumViewLight(topBoldedText: "Hub", topBoldedTextColor: .black, bottomText: "On" ,circleBehindImageColor: .circleYellow, imageOnSide: "poweroutlet.type.b.fill", colorOfImage: .white, backgroudColor: .backgroundLight)
+                                MediumViewDark(topBoldedText: "Apple TV", topBoldedTextColor: .white, bottomText: "Not Playing" ,circleBehindImageColor: .white, imageOnSide: "appletv.fill", colorOfImage: .gray, backgroudColor: .mediumBackground)
+                                MediumViewDark(topBoldedText: "HomePod", topBoldedTextColor: .white, bottomText: "Not Playing" ,circleBehindImageColor: .mediumBackground, imageOnSide: "homepodmini.fill", colorOfImage: .gray, backgroudColor: .mediumBackground)
+                            }
+                        }
+                        .toolbar {
+                            ToolbarItem(placement: .topBarTrailing) {
+                                VStack {
+                                    Spacer(minLength: 10)
+                                    HStack {
+                                        Button(action: {}) {
+                                            Image(systemName: "waveform")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .padding(.bottom, 5)
+                                                .frame(width: 20)
+                                                .foregroundColor(.black)
+                                        }
+                                        Spacer(minLength: 25)
+                                        
+                                        Button(action: {}) {
+                                            Image(systemName: "plus")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                .frame(width: 20)
+                                                .foregroundColor(.black)
+                                        }
+                                        Spacer(minLength: 25)
+                                        
+                                            Button(action: {}) {
+                                                Image(systemName: "ellipsis.circle")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fill)
+                                                    .padding(.bottom, 5)
+                                                    .frame(width: 20)
+                                                    .foregroundColor(.black)
+                                            }
+                                    }
+                                }
+                            }
+                        }
+                        
                     }
                 }
+                .navigationTitle("My Home")
+                .padding()
             }
-            .navigationTitle("My Home")
-            .padding()
+            
         }
     }
 }

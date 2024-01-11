@@ -1,5 +1,5 @@
 //
-//  SmallView.swift
+//  MediumView.swift
 //  HomeApp
 //
 //  Created by Benjamin Lavallee on 2024-01-09.
@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct SmallView: View {
+struct MediumViewLight: View {
     let topBoldedText: String
+    let topBoldedTextColor: Color
     let bottomText: String
+    let circleBehindImageColor: Color
     let imageOnSide: String
     let colorOfImage: Color
     let backgroudColor: Color
@@ -18,30 +20,32 @@ struct SmallView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundColor(backgroudColor)
-                .frame(height: 50)
+                .frame(height: 65)
             HStack {
                 ZStack {
+                    Image(systemName: "circle.fill")
+                        .foregroundColor(circleBehindImageColor)
+                    .font(.system(size: 50))
                     Image(systemName: imageOnSide)
                         .foregroundColor(colorOfImage)
                     .font(.system(size: 25))
-                    .scaledToFit()
                 }
                 VStack (alignment: .leading) {
                         Text(topBoldedText)
-                            .foregroundStyle(Color.white)
+                            .foregroundStyle(topBoldedTextColor)
                         .bold()
                         .frame(alignment: .leading)
-                        .scaledToFit()
                     Text(bottomText)
                         .foregroundStyle(Color.gray)
-                        .scaledToFit()
                 }
+                Spacer()
                 }
             }
+        .scaledToFit()
         }
 }
 
 #Preview {
     
-    return SmallView(topBoldedText: "Climate", bottomText: "16.0-20.5°", imageOnSide: "fan.fill", colorOfImage: .lightBlue, backgroudColor: .smallBackground)
+    return MediumViewLight(topBoldedText: "Network", topBoldedTextColor: .black, bottomText: "On" ,circleBehindImageColor: .circleYellow, imageOnSide: "poweroutlet.type.b.fill", colorOfImage: .white, backgroudColor: .backgroundLight)
 }
