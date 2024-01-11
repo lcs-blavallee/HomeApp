@@ -69,8 +69,9 @@ struct ContentView: View {
                         HStack {
                             VStack {
                                 MediumViewLight(topBoldedText: "Network", topBoldedTextColor: .black, bottomText: "On" ,circleBehindImageColor: .circleYellow, imageOnSide: "poweroutlet.type.b.fill", colorOfImage: .white, backgroudColor: .backgroundLight)
-                                RoundedRectangle(cornerRadius: 25.0)
+                                XlViewDark(topBoldedText: "Side Door", bottomText: "Locked", circleBehindImageColor: .xlCircleDark, imageOnSide: "lock.fill", colorOfImage: .turquoise, backgroudColor: .extraLargeBackground)
                                     .aspectRatio(0.95, contentMode: .fill)
+                                    .padding(.trailing, 5)
                             }
                             VStack {
                                 MediumViewLight(topBoldedText: "Hub", topBoldedTextColor: .black, bottomText: "On" ,circleBehindImageColor: .circleYellow, imageOnSide: "poweroutlet.type.b.fill", colorOfImage: .white, backgroudColor: .backgroundLight)
@@ -101,7 +102,7 @@ struct ContentView: View {
                                                 .foregroundColor(.black)
                                         }
                                         Spacer(minLength: 25)
-                                        
+                            
                                             Button(action: {}) {
                                                 Image(systemName: "ellipsis.circle")
                                                     .resizable()
